@@ -1,0 +1,395 @@
+.landingContainer {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Hero Section */
+.heroSection {
+  position: relative;
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 8px solid #222;
+}
+
+.heroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.heroVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+}
+
+.heroGradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #000000 0%, rgba(26, 0, 0, 0.5) 40%, rgba(47, 0, 0, 0.7) 100%);
+  pointer-events: none;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 5%;
+  z-index: 10;
+}
+
+.logo {
+  color: #e50914; /* Netflix red */
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.headerActions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.languageSelect {
+  background-color: rgba(18, 18, 18, 0.8);
+  color: #ffffff;
+  border: 1px solid #555555;
+  padding: 6px 24px 6px 12px;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+}
+
+.loginBtn {
+  background-color: #e50914;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.loginBtn:hover {
+  background-color: #c11119;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 10;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+.heroTitle {
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.heroSubtitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 24px;
+}
+
+.heroText {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+.emailForm {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 8px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.inputGroup {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputGroup input {
+  height: 100%;
+  background-color: rgba(18, 18, 18, 0.7);
+  border: 1px solid #555555;
+  border-radius: 4px;
+  padding: 16px;
+  color: #ffffff;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.inputGroup input:focus {
+  border-color: #ffffff;
+}
+
+.inputGroup input::placeholder {
+  color: #cccccc;
+}
+
+.startBtn {
+  background-color: #e50914;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0 24px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.startBtn:hover {
+  background-color: #c11119;
+}
+
+/* Curva Separadora da Netflix */
+.curveContainer {
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.curveElement {
+  position: absolute;
+  bottom: 0;
+  left: -5%;
+  width: 110%;
+  height: 200%;
+  background-color: #000000;
+  border-top-left-radius: 50% 100%;
+  border-top-right-radius: 50% 100%;
+  border-top: 4px solid #e50914; /* Linha vermelha curva da identidade Netflix/AFK */
+}
+
+/* Sections */
+.sectionContainer {
+  padding: 72px 5%;
+  background-color: #000000;
+}
+
+.sectionTitle {
+  font-size: 2.25rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+/* Trending */
+.trendingList {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+  /* Esconder barra de rolagem mas manter funcionalidade */
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+}
+
+.trendingList::-webkit-scrollbar {
+  display: none;
+}
+
+.trendingItem {
+  position: relative;
+  min-width: 200px;
+  height: 280px;
+  border-radius: 8px;
+  transition: transform 0.2s;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+}
+
+.trendingItem:hover {
+  transform: scale(1.05);
+}
+
+.trendingPoster {
+  position: absolute;
+  top: 0;
+  left: 35px;
+  right: 0;
+  bottom: 0;
+  background-color: #1a0000;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.posterImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.trendingNumber {
+  font-size: 140px;
+  font-weight: 900;
+  color: #000;
+  -webkit-text-stroke: 4px #444; /* Borda branca na Netflix, podemos usar cinza claro ou branco */
+  line-height: 0.8;
+  z-index: 2;
+  position: relative;
+  transform: translateX(-20px);
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+/* Fix para a borda branca (webkit) */
+@supports (-webkit-text-stroke: 4px #fff) {
+  .trendingNumber {
+    -webkit-text-stroke: 4px #fff;
+  }
+}
+
+/* Reasons */
+.reasonsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.reasonCard {
+  background: linear-gradient(135deg, #121212 0%, #1a0000 100%);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-height: 280px;
+}
+
+.reasonCard h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.reasonCard p {
+  font-size: 1rem;
+  color: #cccccc;
+  line-height: 1.5;
+}
+
+.cardIcon {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  font-size: 3rem;
+}
+
+/* Footer Section */
+.footerSection {
+  padding: 72px 5%;
+}
+
+.bottomCallToAction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.bottomCallToAction p {
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+
+.footer {
+  color: #cccccc;
+  font-size: 0.875rem;
+}
+
+.footerCall {
+  margin-bottom: 24px;
+}
+
+.footerCall a {
+  color: #cccccc;
+}
+
+.footerLinks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 24px;
+}
+
+.footerLinks a {
+  color: #cccccc;
+  text-decoration: underline;
+}
+
+.footerLanguage {
+  margin-bottom: 24px;
+}
+
+.footerBrand {
+  font-size: 0.75rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+  .heroSubtitle {
+    font-size: 1.125rem;
+  }
+  .emailForm {
+    flex-direction: column;
+  }
+  .startBtn {
+    margin-top: 16px;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+  }
+}

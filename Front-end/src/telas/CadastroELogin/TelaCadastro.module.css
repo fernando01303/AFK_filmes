@@ -1,0 +1,227 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Fundo em Tela Cheia com Gradiente Vermelho/Preto */
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Gradiente restaurado que combina com a paleta da marca */
+  background: linear-gradient(to top, #000000 0%, #1a0000 40%, #2F0000 100%);
+  padding: 16px;
+}
+
+/* Cartão do Formulário Centralizado - Tamanho Padrão */
+.formWrapper {
+  width: 100%;
+  max-width: 420px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 32px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Textos do Cabeçalho */
+.title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  text-align: left;
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  color: #aaaaaa;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+/* Botões Sociais */
+.socialButtons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.socialBtn {
+  flex: 1;
+  background-color: transparent;
+  border: 1px solid #555;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.socialBtn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: #888;
+}
+
+.socialIconImg {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+/* Divisor "Ou" */
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #777777;
+  font-size: 0.8rem;
+  margin-bottom: 16px;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #333333;
+}
+
+.divider span {
+  padding: 0 12px;
+}
+
+/* Formulário e Inputs */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.inputGroup label {
+  font-size: 0.8rem;
+  color: #cccccc;
+  font-weight: 500;
+}
+
+.inputGroup input {
+  width: 100%;
+  background-color: rgba(51, 51, 51, 0.7);
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 12px;
+  color: #ffffff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.inputGroup input:focus {
+  border-color: #E50914; /* Destaque em Vermelho */
+  background-color: rgba(68, 68, 68, 0.9);
+}
+
+.inputGroup input::placeholder {
+  color: #888888;
+}
+
+.passwordWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.passwordWrapper input {
+  width: 100%;
+  padding-right: 60px;
+}
+
+.eyeToggle {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #aaaaaa;
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.eyeToggle:hover {
+  color: #ffffff;
+}
+
+.message {
+  font-size: 0.8rem;
+  text-align: center;
+  margin-top: -4px;
+  margin-bottom: 6px;
+}
+
+/* Botão Submit (Ação Principal) */
+.submitBtn {
+  background-color: #E50914;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background-color 0.2s;
+}
+
+.submitBtn:hover {
+  background-color: #c10710;
+}
+
+.footerText {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #888888;
+  margin-top: 18px;
+}
+
+.footerText a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.footerText a:hover {
+  text-decoration: underline;
+}

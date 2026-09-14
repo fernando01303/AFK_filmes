@@ -1,0 +1,213 @@
+.catalogContainer {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4%;
+  height: 68px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7) 10%, rgba(0,0,0,0));
+  z-index: 100;
+  transition: background-color 0.4s;
+  box-sizing: border-box;
+}
+.navbar.scrolled {
+  background-color: #000000;
+}
+.navLeft {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.logo {
+  color: #e50914;
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+.navLinks {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.navLinks li {
+  color: #e5e5e5;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.navLinks li:hover {
+  color: #b3b3b3;
+}
+.navLinks li.active {
+  font-weight: bold;
+  color: #ffffff;
+}
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.navIcon {
+  cursor: pointer;
+  color: #ffffff;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  background-color: #1a0000;
+}
+.heroOverlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 60%),
+              linear-gradient(to top, #000000 0%, rgba(0,0,0,0) 20%);
+}
+.heroContent {
+  position: absolute;
+  top: 30%;
+  left: 4%;
+  width: 50%;
+  z-index: 10;
+}
+.heroTitle {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+.heroDescription {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  margin-bottom: 24px;
+}
+.heroButtons {
+  display: flex;
+  gap: 16px;
+}
+.playBtn, .moreInfoBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.2s;
+}
+.playBtn {
+  background-color: #ffffff;
+  color: #000000;
+}
+.playBtn:hover {
+  background-color: rgba(255,255,255,0.75);
+}
+.moreInfoBtn {
+  background-color: rgba(109, 109, 110, 0.7);
+  color: #ffffff;
+}
+.moreInfoBtn:hover {
+  background-color: rgba(109, 109, 110, 0.4);
+}
+
+/* Rows Wrapper */
+.rowsWrapper {
+  margin-top: -100px;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Footer */
+.footer {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 80px 4% 20px;
+  color: grey;
+  font-size: 0.85rem;
+}
+.footerSocials {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+.socialIcon {
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.footerLinks {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+}
+.footerLinks a {
+  color: grey;
+  text-decoration: none;
+}
+.footerLinks a:hover {
+  text-decoration: underline;
+}
+.serviceCodeBtn {
+  background: transparent;
+  border: 1px solid grey;
+  color: grey;
+  padding: 8px 12px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+.serviceCodeBtn:hover {
+  color: white;
+  border-color: white;
+}
+.copyright {
+  font-size: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .heroContent {
+    width: 90%;
+  }
+  .navLinks {
+    display: none;
+  }
+  .footerLinks {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
