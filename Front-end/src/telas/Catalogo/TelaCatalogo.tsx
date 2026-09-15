@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import styles from './TelaCatalogo.module.css';
 import { Search, Bell, User, Play, Info } from 'lucide-react';
 import { Linha } from './Linha';
+import { DetalhesFilme } from '../DetalhesFilme/DetalhesFilme';
 
 export const TelaCatalogo: React.FC<{ onLogout: () => void }> = ({ onLogout }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -69,6 +70,12 @@ export const TelaCatalogo: React.FC<{ onLogout: () => void }> = ({ onLogout }) =
   // Se a API retornou filmes, renderiza uma Row para cada categoria encontrada
   // Se estiver vazio, usa os dados mock para demonstração
   const hasApiMovies = movies.length > 0;
+  
+  const [selectedMovie, setSelectedMovie] = useState<any>(null);
+
+  if (selectedMovie) {
+    return <DetalhesFilme movieData={selectedMovie} onBack={() => setSelectedMovie(null)} />;
+  }
 
   return (
     <div className={styles.catalogContainer}>
@@ -110,7 +117,12 @@ export const TelaCatalogo: React.FC<{ onLogout: () => void }> = ({ onLogout }) =
             <button className={styles.playBtn}>
               <Play size={24} fill="currentColor" /> Assistir
             </button>
-            <button className={styles.moreInfoBtn}>
+            <button className={styles.moreInfoBtn} onClick={() => setSelectedMovie({
+              titulo: 'Stranger Things', 
+              anoLancamento: '2016', 
+              genres: ['Mistério', 'Ficção', 'Drama'],
+              cover: 'https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?auto=format&fit=crop&q=80&w=400&h=600'
+            })}>
               <Info size={24} /> Mais informações
             </button>
           </div>
@@ -121,14 +133,14 @@ export const TelaCatalogo: React.FC<{ onLogout: () => void }> = ({ onLogout }) =
       <div className={styles.rowsWrapper}>
         {hasApiMovies ? (
           Object.entries(moviesByCategory).map(([categoryName, catMovies]) => (
-            <Linha key={categoryName} title={categoryName} movies={catMovies} />
+            <Linha key={categoryName} title={categoryName} movies={catMovies as any} onMovieClick={setSelectedMovie} />
           ))
         ) : (
           <>
-            <Linha title="Em Alta" movies={mockEmAlta} />
-            <Linha title="Lançamentos" movies={mockLancamentos} />
-            <Linha title="Ação e Aventura" movies={mockEmAlta.slice().reverse()} />
-            <Linha title="Minha Lista" movies={mockLancamentos.slice(2, 6)} />
+            <Linha title="Em Alta" movies={mockEmAlta} onMovieClick={setSelectedMovie} />
+            <Linha title="Lançamentos" movies={mockLancamentos} onMovieClick={setSelectedMovie} />
+            <Linha title="Ação e Aventura" movies={mockEmAlta.slice().reverse()} onMovieClick={setSelectedMovie} />
+            <Linha title="Minha Lista" movies={mockLancamentos.slice(2, 6)} onMovieClick={setSelectedMovie} />
           </>
         )}
       </div>

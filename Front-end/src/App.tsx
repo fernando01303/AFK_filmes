@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { PaginaInicial } from './telas/PaginaInicial/PaginaInicial';
 import { TelaCadastro } from './telas/CadastroELogin/TelaCadastro';
 import { TelaPainelAdmin } from './telas/PainelAdmin/TelaPainelAdmin';

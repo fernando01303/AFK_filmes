@@ -32,6 +32,7 @@ CREATE TABLE IF NOT EXISTS midias (
     titulo VARCHAR(150) NOT NULL,
     ano_lancamento INT NOT NULL,
     id_categoria INT NOT NULL,
+    capa VARCHAR(255),
     FOREIGN KEY (id_categoria) REFERENCES categorias(id) ON DELETE CASCADE
 );
 

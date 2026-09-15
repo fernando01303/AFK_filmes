@@ -14,9 +14,10 @@ interface Movie {
 interface LinhaProps {
   title: string;
   movies: Movie[];
+  onMovieClick?: (movie: Movie) => void;
 }
 
-export const Linha: React.FC<LinhaProps> = ({ title, movies }) => {
+export const Linha: React.FC<LinhaProps> = ({ title, movies, onMovieClick }) => {
   const rowRef = useRef<HTMLDivElement>(null);
   const [isMoved, setIsMoved] = useState(false);
 
@@ -43,7 +44,7 @@ export const Linha: React.FC<LinhaProps> = ({ title, movies }) => {
         <div className={styles.rowPosters} ref={rowRef}>
           {movies.map((m, index) => (
             <div key={m.id || index} className={styles.posterWrapper}>
-              <div className={styles.poster}>
+              <div className={styles.poster} onClick={() => onMovieClick && onMovieClick(m)}>
                 {m.cover ? (
                   <img 
                     src={m.cover} 

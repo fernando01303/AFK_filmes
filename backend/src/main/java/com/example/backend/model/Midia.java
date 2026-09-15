@@ -8,7 +8,6 @@ import jakarta.persistence.*;
 public abstract class Midia {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(nullable = false, length = 150)
@@ -21,12 +20,25 @@ public abstract class Midia {
     @JoinColumn(name = "id_categoria", nullable = false)
     private Categoria categoria;
 
+    @Column(length = 255)
+    private String capa;
+
+    @Column(name = "tmdb_id")
+    private Integer tmdbId;
+
     public Midia() {}
 
     public Midia(String titulo, Integer anoLancamento, Categoria categoria) {
         this.titulo = titulo;
         this.anoLancamento = anoLancamento;
         this.categoria = categoria;
+    }
+
+    public Midia(String titulo, Integer anoLancamento, Categoria categoria, String capa) {
+        this.titulo = titulo;
+        this.anoLancamento = anoLancamento;
+        this.categoria = categoria;
+        this.capa = capa;
     }
 
     // Polimorfismo: Método que será sobrescrito nas subclasses
@@ -44,4 +56,10 @@ public abstract class Midia {
 
     public Categoria getCategoria() { return categoria; }
     public void setCategoria(Categoria categoria) { this.categoria = categoria; }
+
+    public String getCapa() { return capa; }
+    public void setCapa(String capa) { this.capa = capa; }
+
+    public Integer getTmdbId() { return tmdbId; }
+    public void setTmdbId(Integer tmdbId) { this.tmdbId = tmdbId; }
 }
